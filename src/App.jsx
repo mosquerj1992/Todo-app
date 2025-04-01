@@ -1,13 +1,17 @@
+import { useState } from 'react';
+import './App.css'
+import {TodoApp} from "./TodoApp"
 
-import "./App.css";
-import { TodoApp } from "./TodoApp";
-
-function App() {
-
-
+function App(){
+  
+  
   return (
-    < TodoApp />
+    <TodoApp/>
   )
+
 }
 
-export default App;
+
+export default App
+
+
