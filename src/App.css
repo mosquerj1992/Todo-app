@@ -7,6 +7,8 @@
 
 .card {
   padding: 2em;
+  border:1px solid ;
+  border-radius: 5px;
 }
 
 

@@ -1,12 +1,30 @@
 import { useState } from 'react';
 import './App.css'
-import {TodoApp} from "./TodoApp"
+import { HeaderApp } from "./components/common/HeaderApp";
+import { TodoCard } from './components/TodoCard';
 
-function App(){
-  
-  
+function App() {
+
+  const [cards, setCards] = useState([{ title: "Actividades de hoy ", tasks: [] }]);
+  const handleAddNewCard = () => {
+
+    setCards([...cards,{title:"",tasks:[]}])
+
+  };
+
   return (
-    <TodoApp/>
+    
+    <>
+       <HeaderApp/> 
+      {cards.map((card, indice) => (
+        <TodoCard title={card.title} key ={indice} />
+        
+      ))}
+
+
+      <button onClick={handleAddNewCard}>Nueva Lista </button>
+
+    </>
   )
 
 }
