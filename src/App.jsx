@@ -6,7 +6,7 @@ import { TodoCard } from "./components/TodoCard";
 
 function App() {
 
-  const [cards, setCards] = useState([{ title: "Actividades hoy ", tasks: [] }]);
+  const [cards, setCards] = useState([{ title: "Actividades Hoy ", tasks: [] }]);
 
   const handleAddNewCard = () => {
     setCards( [...cards, {title: "", tasks: [] }])

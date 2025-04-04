@@ -18,7 +18,7 @@
   padding: 1rem;
   border-bottom: 1px solid #666;
   display: flex;
-  justify-content: center; /* mantiene el tÃtulo centrado */
+  justify-content: center; /* mantiene el titulo centrado */
   align-items: center;
   position: sticky;
   top: 0;
@@ -39,8 +39,8 @@
   border-radius: 8px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
   width: 300px;
-  padding: 5px;
-  margin: 5px;
+  padding: 0px;
+  margin: 0px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -51,10 +51,10 @@
   background-color: #adc387;
   color: black;
   margin: 0;
-  padding: 1rem;
+  padding: 0rem;
   text-align: center;
   font-weight: bold;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0px solid #ccc;
 }
 
 .card ul {
