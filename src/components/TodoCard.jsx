@@ -33,6 +33,7 @@ export const TodoCard = ({ title = 'Titulo por defecto', tasks = [] }) => {
 
     return (
         <div className="card">
+            
             <div>
                 <h3>({title}) </h3>
             </div>
@@ -72,9 +73,6 @@ export const TodoCard = ({ title = 'Titulo por defecto', tasks = [] }) => {
                         <button type="submit">➕</button>
                     </form>
                 </div>
-
-
-
             </div>
         </div >
     );
