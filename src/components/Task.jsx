@@ -1,26 +1,16 @@
 import React from "react";
-export const Task = ({ task, indice, tasks, setTareas }) => {
-
-    const handleToggleTask = (indice) => {
-        console.log(tasks);
-        const nuevasTareas = [...tasks];
-        nuevasTareas[indice].completed = !nuevasTareas[indice].completed;
-        setTareas(nuevasTareas);
-
+export const Task = ({ task, indice, handleToggleTask, handleDeleteTask }) => {
+    const onToggleTask = (indice) => {
+        handleToggleTask(indice);
     };
 
-    const handleDeleteTask = (indice) => {
-        const newlistTasks = tasks.filter((_, i) => i !== indice);
-        setTareas(newlistTasks);
-    };
-
-
+   
     return (
         <>
             <input
                 type="checkbox"
                 checked={task.completed}
-                onChange={() => handleToggleTask(indice)}
+                onChange={() => onToggleTask(indice)}
             />
 
             <span>{task.tarea}</span>

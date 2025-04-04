@@ -3,27 +3,8 @@ import { Task } from "./Task";
 
 
 export const TodoCard = ({ title = 'Titulo por defecto', tasks = [] }) => {
-
     const [tarea, setTarea] = useState("");
-    const [tareas, setTareas] = useState([
-        // { tarea: "Pasear al perro", completed: false },
-        // { tarea: "Llamar a mi mamá", completed: false },
-        // { tarea: "Lavar la ropa", completed: false },
-    ]);
-
-    const handleToggleTask = (indice) => {
-        const nuevasTareas = [...tareas];
-        nuevasTareas[indice].completed = !nuevasTareas[indice].completed;
-        setTareas(nuevasTareas);
-
-    };
-
-    const handleDeleteTask = (indice) => {
-        const newListTasks = tareas.filter((_, i) => i !== indice);
-        setTareas(newListTasks);
-
-
-    };
+    const [tareas, setTareas] = useState([]);
 
     const handleAddNewTask = (event) => {
         event.preventDefault();
@@ -37,6 +18,19 @@ export const TodoCard = ({ title = 'Titulo por defecto', tasks = [] }) => {
     };
 
 
+    const handleToggleTask = (indice) => {
+        const nuevasTareas = [...tareas];
+        nuevasTareas[indice].completed = !nuevasTareas[indice].completed;
+        setTareas(nuevasTareas);
+
+    };
+
+    const handleDeleteTask = (indice) => {
+        const newListTasks = tareas.filter((_, i) => i !== indice);
+        setTareas(newListTasks);
+    };
+
+
     return (
         <div className="card">
             <div>
@@ -45,37 +39,22 @@ export const TodoCard = ({ title = 'Titulo por defecto', tasks = [] }) => {
 
             <div>
                 <ul style={{ listStyle: "none", padding: 0 }}>
-                    {tareas.map((tareas, indice) => (
+                    {tareas.map((t, indice) => (
                         <li
                             key={indice}
 
                             style={{
-                                textDecoration: tareas.completed ? "line-through " : "none",
+                                textDecoration: t.completed ? "line-through " : "none",
                                 cursor: "pointer",
                             }}
                         >
-                            {/* <Task task={tarea}indice={indice} tasks={tareas} setTareas={setTarea}/>  */}
+                         <Task 
+                         task={t} 
+                         indice={indice} tasks={tareas} 
+                         handleToggleTask={handleToggleTask}
+                         handleDeleteTask={handleDeleteTask}/> 
 
-                            <input
-                                type="checkbox"
-                                checked={tareas.completed}
-                                onChange={() => handleToggleTask(indice)}
-                            />
-
-                            <span>{tareas.tarea}</span>
-
-                            <button
-                                onClick={() => handleDeleteTask(indice)}
-                                style={{
-                                    marginLeft: "1em",
-                                    border: "none",
-                                    borderRadius: "45px",
-                                    cursor: "pointer"
-                                }}
-                            >
-                                🗑️
-                            </button>
-
+                          
                         </li>
                     ))}
                 </ul>
