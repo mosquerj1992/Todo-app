@@ -2,33 +2,29 @@ import { useState } from "react";
 import { Task } from "./Task";
 
 
-export const TodoCard = ({title='Titulo por defecto', tasks=[]}) => {
-
-
-
+export const TodoCard = ({ title = 'Titulo por defecto', tasks = [] }) => {
 
     const [tarea, setTarea] = useState("");
     const [tareas, setTareas] = useState([
-        { tarea: "Pasear al perro", completed: false },
-        { tarea: "Llamar a mi mamá", completed: false },
-        { tarea: "Lavar la ropa", completed: false },
+        // { tarea: "Pasear al perro", completed: false },
+        // { tarea: "Llamar a mi mamá", completed: false },
+        // { tarea: "Lavar la ropa", completed: false },
     ]);
 
     const handleToggleTask = (indice) => {
         const nuevasTareas = [...tareas];
-        nuevasTareas[indice].completed = !nuevasTareas[indice].completed
+        nuevasTareas[indice].completed = !nuevasTareas[indice].completed;
         setTareas(nuevasTareas);
 
-    }
+    };
 
     const handleDeleteTask = (indice) => {
+        const newListTasks = tareas.filter((_, i) => i !== indice);
+        setTareas(newListTasks);
 
-        console.log(tareas);
-        const newlisTasks = tareas.filter((_, indice) => indice !== indice);
-        setTarea(newlisTasks);
-       
+
     };
-    
+
     const handleAddNewTask = (event) => {
         event.preventDefault();
         if (tarea.trim() === "") return;
@@ -44,46 +40,48 @@ export const TodoCard = ({title='Titulo por defecto', tasks=[]}) => {
     return (
         <div className="card">
             <div>
-                <h2>({title}) </h2>
+                <h3>({title}) </h3>
             </div>
 
             <div>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                    {tareas.map((tarea, indice) => (
+                <ul style={{ listStyle: "none", padding: 0 }}>
+                    {tareas.map((tareas, indice) => (
                         <li
                             key={indice}
-                            onClick={() => handleToggleTask(indice)}
+
                             style={{
-                                textDecoration: tarea.completed ? "line-through" : "none",
+                                textDecoration: tareas.completed ? "line-through " : "none",
                                 cursor: "pointer",
                             }}
                         >
-                            {/* <Task tarea={tarea} tareas={tareas} setTareas={setTarea}/> */}
+                            {/* <Task task={tarea}indice={indice} tasks={tareas} setTareas={setTarea}/>  */}
+
                             <input
                                 type="checkbox"
-                                checked={tarea.completed}
+                                checked={tareas.completed}
                                 onChange={() => handleToggleTask(indice)}
                             />
 
-                            <span>{tarea.tarea}</span>
+                            <span>{tareas.tarea}</span>
 
                             <button
                                 onClick={() => handleDeleteTask(indice)}
                                 style={{
-                                    marginLeft: '1em',
-                                    border: 'none',
-                                    borderRadius: '15px',
-                                    cursor: 'pointer'
+                                    marginLeft: "1em",
+                                    border: "none",
+                                    borderRadius: "45px",
+                                    cursor: "pointer"
                                 }}
                             >
                                 🗑️
                             </button>
+
                         </li>
                     ))}
                 </ul>
 
                 <div>
-                    <form onSubmit={handleDeleteTask}>
+                    <form onSubmit={handleAddNewTask}>
                         <input
                             type="text"
                             value={tarea}

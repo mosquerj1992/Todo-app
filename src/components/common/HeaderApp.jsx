@@ -2,13 +2,11 @@ import React from 'react'
 
 export const HeaderApp = () => {
 
-const TitleApp='toDo List App'
+  const TitleApp = 'TODO LIST APP'
 
   return (
-
-    <div>
-        <span>{TitleApp}</span>
-
-    </div>
-  )
-}
+    <header className="header">
+      <span>{TitleApp}</span>
+    </header>
+  );
+};

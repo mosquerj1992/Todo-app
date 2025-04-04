@@ -1,14 +1,102 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
+  width: 100%;
   padding: 2rem;
   text-align: center;
 }
 
-.card {
-  padding: 2em;
-  border:1px solid ;
-  border-radius: 5px;
+.content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
+.header {
+  background-color: #adc387;
+  padding: 1rem;
+  border-bottom: 1px solid #666;
+  display: flex;
+  justify-content: center; /* mantiene el tÃtulo centrado */
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: #fffaf3;
+  border: 1px solid #999;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  width: 300px;
+  padding: 5px;
+  margin: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  background-color: #adc387;
+  color: black;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.card ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card li {
+  background-color: #e8d5c2;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.card li input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+  accent-color: #000;
+}
+
+.card li span {
+  flex-grow: 1;
+}
+
+.card li.completed span {
+  text-decoration: line-through;
+  color: #333;
+}
+
+.card li button{
+  background-color: #ff6666;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+  
