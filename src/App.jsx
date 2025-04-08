@@ -3,9 +3,16 @@ import "./App.css";
 import { HeaderApp } from "./components/common/HeaderApp";
 import { TodoCard } from "./components/TodoCard";
 import loader from "../src/assets/loader.gif";
+import { ThemeContext } from "./ThemeContext";
 
 
 function App() {
+
+  const [theme, setTheme] = useState('light');
+
+  const onToggletheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'linght'));
+  }
 
   const [cards, setCards] = useState([{ title: "Actividades Hoy", tasks: [] }]);
 
@@ -16,6 +23,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    //
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -24,7 +32,9 @@ function App() {
 
   return (
 
-    <>
+    <ThemeContext.Provider value={{ theme, onToggletheme }}>
+
+      <ThemeLoader />
       <HeaderApp />
 
       {loading ? (
@@ -43,12 +53,14 @@ function App() {
           </button>
         </>
       )}
-    </>
+    </ThemeContext.Provider>
   );
-
 }
 
+export default App;
 
-export default App
+
+
+
 
 
