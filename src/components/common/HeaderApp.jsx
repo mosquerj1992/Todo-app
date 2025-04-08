@@ -1,9 +1,11 @@
-import React, { useActionState, useContext } from "react";
+import React, {useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 
 export const HeaderApp = () => {
 
 const {theme, onToggleTheme} = useContext(ThemeContext)
+
+console.log (theme, onToggleTheme);
 
 
   const TitleApp = "TODO LIST APP";  

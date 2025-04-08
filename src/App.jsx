@@ -26,7 +26,7 @@ function App() {
     //
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -34,7 +34,7 @@ function App() {
 
     <ThemeContext.Provider value={{ theme, onToggletheme }}>
 
-      <ThemeLoader />
+      {/* <ThemeLoader /> */}
       <HeaderApp />
 
       {loading ? (
