@@ -30,7 +30,7 @@
   margin: 0;
   font-size: 1.2rem;
   font-weight: bold;
-  color: black;
+  color: rgb(18, 17, 17);
   text-transform: uppercase;
 }
 
@@ -91,7 +91,7 @@
 
 .card li.completed span {
   text-decoration: line-through;
-  color: #333;
+  color: hsl(0, 2%, 53%);
 }
 
 .card li button{

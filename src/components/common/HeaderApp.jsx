@@ -1,20 +1,22 @@
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext";
 
 export const HeaderApp = () => {
 
-const {theme, onToggleTheme} = useContext(ThemeContext)
+  const { theme, onToggleTheme } = useContext(ThemeContext)
 
-console.log (theme, onToggleTheme);
+  // console.log(theme);
+  // console.log(onToggleTheme);
 
+  const TitleApp = "TODO LIST APP";
 
-  const TitleApp = "TODO LIST APP";  
+ 
+  const estilo= {
+  backgroundColor: theme === 'ligth'? '#fff':'#222',
+  color: theme === 'ligth'? '#000':'#fff',
+  margin: '1em',
+  padding: '1em'
 
-  const estilo ={
-    backgroundColor: theme ==='lighr' ? '#fff': '#222',
-    color: theme ==='lighr' ? '#000': '#fff',
-    margin:'1em',
-    padding:'1em'
   }
 
   return (
@@ -24,7 +26,6 @@ console.log (theme, onToggleTheme);
       <div style={estilo}>
         <p>El tema actual es:{theme}</p>
         <button onClick={onToggleTheme}>Cambiar tema</button>
-
 
       </div>
     </header>

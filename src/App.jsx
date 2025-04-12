@@ -8,11 +8,11 @@ import { ThemeContext } from "./ThemeContext";
 
 function App() {
 
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('ligth');
 
-  const onToggletheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'linght'));
-  }
+  const onToggleTheme =() =>{
+    setTheme((prev)=>(prev === 'ligth'? 'dark':'ligth'));
+ }
 
   const [cards, setCards] = useState([{ title: "Actividades Hoy", tasks: [] }]);
 
@@ -32,7 +32,7 @@ function App() {
 
   return (
 
-    <ThemeContext.Provider value={{ theme, onToggletheme }}>
+    <ThemeContext.Provider value = {{theme, onToggleTheme }}>
 
       {/* <ThemeLoader /> */}
       <HeaderApp />
