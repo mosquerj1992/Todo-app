@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { HeaderApp } from "./components/common/HeaderApp";
 import { TodoCard } from "./components/TodoCard";
 import loader from "../src/assets/loader.gif";
 import { ThemeContext } from "./ThemeContext";
+import { ThemeLoader } from "./ThemeLoader";
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
 
     <ThemeContext.Provider value = {{theme, onToggleTheme }}>
 
-      {/* <ThemeLoader /> */}
+      <ThemeLoader/>
       <HeaderApp />
 
       {loading ? (

@@ -10,12 +10,12 @@ export const HeaderApp = () => {
 
   const TitleApp = "TODO LIST APP";
 
- 
-  const estilo= {
-  backgroundColor: theme === 'ligth'? '#fff':'#222',
-  color: theme === 'ligth'? '#000':'#fff',
-  margin: '1em',
-  padding: '1em'
+
+  const estilo = {
+    backgroundColor: theme === 'ligth' ? '#fff' : '#222',
+    color: theme === 'ligth' ? '#000' : '#fff',
+    margin: '1em',
+    padding: '1em'
 
   }
 

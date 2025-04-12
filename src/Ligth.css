@@ -1,0 +1,156 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background-color: white;
+}
+
+.content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+
+.header {
+  background-color: #516929;
+  padding: 1rem;
+  border-bottom: 1px solid #666;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(18, 17, 17);
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: #818f4f;
+  border: 1px solid #999;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  width: 300px;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40vh;
+}
+
+.card h3 {
+  background-color: #0f0f0f;
+  color: rgb(110, 116, 84);
+  margin: 0;
+  padding: 0rem;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 0px solid #ccc;
+}
+
+.card ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card li {
+  background-color: #e8d5c2;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.card li input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+  accent-color: #000;
+}
+
+.card li span {
+  flex-grow: 1;
+}
+
+.card li.completed span {
+  text-decoration: line-through;
+  color: #333;
+}
+
+.card li button{
+  background-color: #ff6666;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* .card form{
+  padding: 1rem;
+  display: flex;
+  gap:0.5 rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card form input[type="text"]{
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex-grow: 1;  
+}
+
+.card form button{
+  background-color: #7fc5b4;
+  color:#000;
+  font-size: 105rem;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.new-list-btn{
+background-color: #7fc5b4;
+color: #000;
+border: none;
+border-radius: 10px;
+padding: 0.75rem 1.5rem;
+font-weight: bold;
+font-size: 1rem;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-top: 1rem;
+}
+
+.new-list-btn:hover{
+  background-color: #5c7434;
+}
+   */
